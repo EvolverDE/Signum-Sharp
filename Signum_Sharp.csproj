@@ -9,6 +9,7 @@
   <ItemGroup>
     <Compile Remove="Classes\ClsSignumNET.cs" />
     <Compile Remove="Modules\ModConverts.cs" />
+    <Compile Remove="Modules\ModJSON.cs" />
   </ItemGroup>
 
 </Project>

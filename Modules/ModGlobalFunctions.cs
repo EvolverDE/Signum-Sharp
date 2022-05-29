@@ -237,7 +237,7 @@ namespace Signum_Sharp.Modules
 
             return Cnter;
         }
-        public bool IsNumber(string Input)
+        public static bool IsNumber(string Input)
         {
             char[] CharAry = Input.ToUpper().ToCharArray();
 

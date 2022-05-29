@@ -567,12 +567,6 @@ namespace Signum_Sharp.Classes
         public static bool GetBooleanBetween(string input, string startchar = "(", string endchar = ")", bool LastIdxOf = false)
         {
 
-            // TODO: OUT from Between
-            // If GetINISetting(E_Setting.InfoOut, False) Then
-            // Dim Out As ClsOut = New ClsOut(Application.StartupPath)
-            // Out.ErrorLog2File(Application.ProductName + "-error in SendMessages(): -> " + ex.Message)
-            // End If
-
             if (input.Trim() != "")
             {
                 if (input.Contains(startchar) & input.Contains(endchar))
@@ -592,12 +586,6 @@ namespace Signum_Sharp.Classes
         }
         public static int GetIntegerBetween(string input, string startchar = "(", string endchar = ")", bool LastIdxOf = false)
         {
-
-            // TODO: OUT from Between
-            // If GetINISetting(E_Setting.InfoOut, False) Then
-            // Dim Out As ClsOut = New ClsOut(Application.StartupPath)
-            // Out.ErrorLog2File(Application.ProductName + "-error in SendMessages(): -> " + ex.Message)
-            // End If
 
             if (input.Trim() != "")
             {
@@ -619,12 +607,6 @@ namespace Signum_Sharp.Classes
         public static ulong GetULongBetween(string input, string startchar = "(", string endchar = ")", bool LastIdxOf = false)
         {
 
-            // TODO: OUT from Between
-            // If GetINISetting(E_Setting.InfoOut, False) Then
-            // Dim Out As ClsOut = New ClsOut(Application.StartupPath)
-            // Out.ErrorLog2File(Application.ProductName + "-error in SendMessages(): -> " + ex.Message)
-            // End If
-
             if (input.Trim() != "")
             {
                 if (input.Contains(startchar) & input.Contains(endchar))
@@ -645,12 +627,6 @@ namespace Signum_Sharp.Classes
         public static double GetDoubleBetween(string input, string startchar = "(", string endchar = ")", bool LastIdxOf = false)
         {
 
-            // TODO: OUT from Between
-            // If GetINISetting(E_Setting.InfoOut, False) Then
-            // Dim Out As ClsOut = New ClsOut(Application.StartupPath)
-            // Out.ErrorLog2File(Application.ProductName + "-error in SendMessages(): -> " + ex.Message)
-            // End If
-
             if (input.Trim() != "")
             {
                 if (input.Contains(startchar) & input.Contains(endchar))
@@ -670,12 +646,6 @@ namespace Signum_Sharp.Classes
         }
         public static DateTime GetDateBetween(string input, string startchar = "(", string endchar = ")", bool LastIdxOf = false)
         {
-
-            // TODO: OUT from Between
-            // If GetINISetting(E_Setting.InfoOut, False) Then
-            // Dim Out As ClsOut = New ClsOut(Application.StartupPath)
-            // Out.ErrorLog2File(Application.ProductName + "-error in SendMessages(): -> " + ex.Message)
-            // End If
 
             if (input.Trim() != "")
             {
@@ -704,12 +674,6 @@ namespace Signum_Sharp.Classes
         /// <returns>Vorzugsweise ein Double , andernfalls z.b. ein Integer</returns>
         public static string GetStringBetween(string input, string startchar = "(", string endchar = ")", bool LastIdxOf = false)
         {
-
-            // TODO: OUT from Between
-            // If GetINISetting(E_Setting.InfoOut, False) Then
-            // Dim Out As ClsOut = New ClsOut(Application.StartupPath)
-            // Out.ErrorLog2File(Application.ProductName + "-error in SendMessages(): -> " + ex.Message)
-            // End If
 
             if (input.Trim() != "")
             {
@@ -745,11 +709,7 @@ namespace Signum_Sharp.Classes
                 {
                     if (Input.Contains(startchar) & Input.Contains(endchar))
                     {
-
-                        // Dim StartIdx As Integer = -1
-                        // Dim EndIdx As Integer = -1
                         int CntIdx = 0;
-
 
                         List<int> StartList = CharCounterList(Input, startchar);
                         List<int> EndList = CharCounterList(Input, endchar);
@@ -841,7 +801,7 @@ namespace Signum_Sharp.Classes
 
                     
 
-                    StartIdx =Input.IndexOf(StartChar, StartIdx); //Strings.InStr(StartIdx, Input, StartChar);
+                    StartIdx =Input.IndexOf(StartChar, StartIdx);
 
                     if (StartIdx > 0)
                     {

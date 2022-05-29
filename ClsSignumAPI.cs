@@ -83,6 +83,7 @@ namespace Signum_Sharp
         {
             try
             {
+                //TODO: test the untested function
                 HttpClient request = new HttpClient();
                 StringContent requestStringContent = new StringContent (postData, System.Text.Encoding.UTF8, "application/x-www-form-urlencoded");
                 HttpRequestMessage requestMessage = new HttpRequestMessage(new HttpMethod("POST"), C_Node);
@@ -102,12 +103,12 @@ namespace Signum_Sharp
             catch (Exception ex)
             {
                 return "";
-                //PFPForm.StatusLabel.Text = Application.ProductName + "-error in SignumRequest(" + C_Node + "): " + ex.Message
-                //return Application.ProductName + "-error in SignumRequest(" + C_Node + "): " + ex.Message;
             }
         }
 
         #endregion
+
+        // ####################################################################################################
 
         #region Get
 
@@ -139,8 +140,6 @@ namespace Signum_Sharp
 
             return Returner;
         }
-
-
 
         /// <summary>
         /// Gets the Balance from the given Address (HTML-Tags= coin, account, address, balance, available, pending)
@@ -212,7 +211,6 @@ namespace Signum_Sharp
             else if (Error0.GetType().Name == typeof(string).Name)
             {
                 // TX not OK
-
                 return CoinBal;
             }
 
@@ -282,7 +280,6 @@ namespace Signum_Sharp
             else if (Error0.GetType().Name == typeof(string).Name)
             {
                 // TX not OK
-                
                 return new List<List<string>>();
             }
 
@@ -560,7 +557,6 @@ namespace Signum_Sharp
             else if (Error0.GetType().Name == typeof(string).Name)
             {
                 // TX not OK
-                
                 return 0;
             }
 
@@ -584,8 +580,6 @@ namespace Signum_Sharp
 
             if (Response.Contains("error"))
             {
-                // PFPForm.StatusLabel.Text = Application.ProductName + "-error in GetTransaction(): -> " + Response
-                
                 return new List<string>();
             }
 
@@ -600,8 +594,6 @@ namespace Signum_Sharp
             else if (Error0.GetType().Name == typeof(string).Name)
             {
                 // TX not OK
-                // PFPForm.StatusLabel.Text = Application.ProductName + "-error in GetTransaction(): " + Response
-                
                 return new List<string>();
             }
 
@@ -840,57 +832,6 @@ namespace Signum_Sharp
                     return new List<List<string>>();
                 }
 
-                List<object> EntryList = new List<object>();
-
-                // Dim TX As Object = JSON.RecursiveListSearch(DirectCast(RespList, List(Of Object)), "transactions")
-
-                // If TX.GetType.Name = GetType(String).Name Then
-                // Return New List(Of List(Of String))
-                // ElseIf TX.GetType.Name = GetType(Boolean).Name Then
-                // Return New List(Of List(Of String))
-                // Else
-
-                // Dim TempOBJList As List(Of Object) = New List(Of Object)
-
-                // For Each T_Entry In DirectCast(RespList, List(Of Object))
-
-                // Dim Entry As List(Of Object) = New List(Of Object)
-
-                // If T_Entry.GetType.Name = GetType(List(Of Object)).Name Then
-                // Entry = DirectCast(T_Entry, List(Of Object))
-                // End If
-
-                // If Entry.Count > 0 Then
-
-                // If Entry(0).ToString = "type" Then
-                // If TempOBJList.Count > 0 Then
-                // EntryList.Add(TempOBJList)
-                // End If
-
-                // TempOBJList = New List(Of Object) From {
-                // Entry
-                // }
-                // Else
-                // TempOBJList.Add(Entry)
-                // End If
-
-                // End If
-
-                // Next
-
-                // EntryList.Add(TempOBJList)
-
-                // Dim XML As String = ""
-                // For Each T_Entry In DirectCast(RespList, List(Of Object))
-
-                // Dim Entry As List(Of Object) = New List(Of Object)
-
-                // If T_Entry.GetType.Name = GetType(List(Of Object)).Name Then
-                // Entry = DirectCast(T_Entry, List(Of Object))
-                // End If
-
-                // XML = JSON.JSONListToXMLRecursive(Entry)
-
                 List<string> TempList = new List<string>();
 
                 foreach (var T_SubEntry in (List<object>)RespList)
@@ -1086,7 +1027,7 @@ namespace Signum_Sharp
                         {
                             case "transactionIds":
                                 {
-                                    List<object> TXIDs = new List<object>(); // TryCast(Entry(1), List(Of Object))
+                                    List<object> TXIDs = new List<object>();
 
                                     if (Entry[1].GetType().Name == typeof(List<object>).Name)
                                         TXIDs = (List<object>)Entry[1];
@@ -1153,7 +1094,6 @@ namespace Signum_Sharp
 
             if (Response.Contains("error"))
             {
-                // PFPForm.StatusLabel.Text = Application.ProductName + "-error in GetSmartContractIds(): -> " + Response
                 
                 return new List<string>();
             }
@@ -1169,7 +1109,6 @@ namespace Signum_Sharp
             else if (Error0.GetType().Name == typeof(string).Name)
             {
                 // TX not OK
-                // PFPForm.StatusLabel.Text = Application.ProductName + "-error in GetSmartContractIds(): " + Response
                 
                 return new List<string>();
             }
@@ -1199,12 +1138,6 @@ namespace Signum_Sharp
 
                                 if (SubEntry[0].GetType().Name == typeof(List<string>).Name)
                                     RetList = (List<string>)SubEntry[0];
-
-                                // Try
-                                // RetList = SubEntry(0)
-                                // Catch ex As Exception
-
-                                // End Try
 
                                 return RetList;
                             }
@@ -1385,6 +1318,8 @@ namespace Signum_Sharp
 
         #endregion
 
+        // ####################################################################################################
+
         #region Message
 
         public string SendMoney(string SenderPublicKey, ulong RecipientID, double Amount, double Fee = 0.0, string Message = "", bool MessageIsText = true, string RecipientPublicKey = "")
@@ -1561,6 +1496,8 @@ namespace Signum_Sharp
         #endregion
 
         #endregion
+
+        // ####################################################################################################
 
         #region Convert tools
 
@@ -1932,6 +1869,8 @@ namespace Signum_Sharp
 
         #endregion
 
+        // ####################################################################################################
+
         #region Toolfunctions
 
         private struct S_Sorter
@@ -1948,8 +1887,8 @@ namespace Signum_Sharp
             {
                 List<string> Entry = input[i];
 
-                ulong T_Timestamp = ModJSON.GetULongBetweenFromList(Entry, "<timestamp>", "</timestamp>");
-                ulong T_Transaction = ModJSON.GetULongBetweenFromList(Entry, "<transaction>", "</transaction>");
+                ulong T_Timestamp = ClsJSON.GetULongBetweenFromList(Entry, "<timestamp>", "</timestamp>");
+                ulong T_Transaction = ClsJSON.GetULongBetweenFromList(Entry, "<transaction>", "</transaction>");
 
                 S_Sorter NuSort = new S_Sorter();
                 NuSort.Timestamp = T_Timestamp;
@@ -1968,8 +1907,8 @@ namespace Signum_Sharp
                 {
                     var retent = input[i];
 
-                    ulong T_Timestamp = ModJSON.GetULongBetweenFromList(retent, "<timestamp>", "</timestamp>");
-                    ulong T_Transaction = ModJSON.GetULongBetweenFromList(retent, "<transaction>", "</transaction>");
+                    ulong T_Timestamp = ClsJSON.GetULongBetweenFromList(retent, "<timestamp>", "</timestamp>");
+                    ulong T_Transaction = ClsJSON.GetULongBetweenFromList(retent, "<transaction>", "</transaction>");
 
                     if (T_Timestamp == sort.Timestamp & T_Transaction == sort.TXID)
                     {
@@ -1983,6 +1922,8 @@ namespace Signum_Sharp
         }
 
         #endregion
+
+        // ####################################################################################################
 
         #region Encrypt / Decrypt tools
 
