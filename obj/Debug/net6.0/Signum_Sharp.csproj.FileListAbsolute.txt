@@ -1,0 +1,5 @@
+C:\Current_Develpements\Signum_Sharp\obj\Debug\net6.0\Signum_Sharp.csproj.AssemblyReference.cache
+C:\Current_Develpements\Signum_Sharp\obj\Debug\net6.0\Signum_Sharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Current_Develpements\Signum_Sharp\obj\Debug\net6.0\Signum_Sharp.AssemblyInfoInputs.cache
+C:\Current_Develpements\Signum_Sharp\obj\Debug\net6.0\Signum_Sharp.AssemblyInfo.cs
+C:\Current_Develpements\Signum_Sharp\obj\Debug\net6.0\Signum_Sharp.csproj.CoreCompileInputs.cache
