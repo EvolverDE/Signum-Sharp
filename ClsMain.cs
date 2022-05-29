@@ -7,16 +7,16 @@ using System.Security.Cryptography;
 
 namespace Signum_Sharp
 {
-    public class ClsSignumAPI
+    public class ClsMain
     {
         private static string C_AddressPreFix = "S";
         
 
         public string C_Node { get; set; } = "";
 
-        private static string? C_PassPhrase;
-        private static string? C_PrivateKey;
-        private static string? C_AgreementKey;
+        private static string? C_PassPhrase = "";
+        private static string? C_PrivateKey = "";
+        private static string? C_AgreementKey = "";
 
         public string C_PublicKey { get; set; }
         public ulong C_AccountID { get; set; }
@@ -24,7 +24,7 @@ namespace Signum_Sharp
 
         public List<List<string>> C_UTXList { get; set; } = new List<List<string>>();
 
-        public ClsSignumAPI(string Node, string PassPhrase)
+        public ClsMain(string Node, string PassPhrase)
         {
             C_Node = Node;
             C_PassPhrase = PassPhrase;
@@ -186,7 +186,7 @@ namespace Signum_Sharp
             {
                 "<coin>SIGNA</coin>",
                 "<account>" + AccountID.ToString() + "</account>",
-                "<address>" + ClsSignumAPI.C_AddressPreFix + Address + "</address>",
+                "<address>" + ClsMain.C_AddressPreFix + Address + "</address>",
                 "<balance>0</balance>",
                 "<available>0</available>",
                 "<pending>0</pending>"
@@ -1514,7 +1514,6 @@ namespace Signum_Sharp
             else if (Error0.GetType().Name == typeof(string).Name)
             {
                 // TX not OK
-                
                 return new List<string>();
             }
 
@@ -1599,7 +1598,6 @@ namespace Signum_Sharp
                             // TXDetailList.Add("<transaction>" + Transaction + "</transaction>")
                             TXDetailList.Add(AttStr);
 
-                            break;
                             break;
                         }
 
@@ -1797,7 +1795,7 @@ namespace Signum_Sharp
 
                 return RetList;
             }
-            catch (Exception ex)
+            catch
             {
                 return RetList;
             }
@@ -1841,8 +1839,8 @@ namespace Signum_Sharp
             ByteList.AddRange(new List<byte>{(byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0});
 
 
-            System.Security.Cryptography.SHA256Managed SHA256 = new System.Security.Cryptography.SHA256Managed();
-            List<byte> Hash = SHA256.ComputeHash(ByteList.ToArray()).ToList();
+            SHA256 Sha256 = SHA256.Create();
+            List<byte> Hash = Sha256.ComputeHash(ByteList.ToArray()).ToList();
 
             ulong HashULong = BitConverter.ToUInt64(Hash.ToArray(), 0);
 
@@ -1975,7 +1973,10 @@ namespace Signum_Sharp
             if (C_PassPhrase == "")
             {
                 if (C_PublicKey  == PublicKey)
+                {
                     return "";
+                }
+                    
 
                 string DecryptedMsg = DecryptMessage(data, nonce, PublicKey, C_AgreementKey );
 

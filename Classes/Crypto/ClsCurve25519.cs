@@ -45,8 +45,6 @@ namespace Signum_Sharp.Classes.Crypto
         // group order (a prime near 2^252+2^124) 
         public byte[] ORDER { get; } = new[] { (byte)237, (byte)211, (byte)245, (byte)92, (byte)26, (byte)99, (byte)18, (byte)88, (byte)214, (byte)156, (byte)247, (byte)162, (byte)222, (byte)249, (byte)222, (byte)20, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)16 };
 
-        public byte[] dummy;
-
         #region ******* KEY AGREEMENT ********
 
         /// <summary>
@@ -70,7 +68,7 @@ namespace Signum_Sharp.Classes.Crypto
         public void KeyGen(ref byte[] PublicKey, ref byte[] SignKey, ref byte[] AgreementKey)
         {
             Clamp( ref AgreementKey);
-            dummy = new byte[] { };
+            byte[] dummy = new byte[] { };
             Core( PublicKey,  SignKey,  AgreementKey,  dummy);
         }
 
@@ -82,7 +80,7 @@ namespace Signum_Sharp.Classes.Crypto
         /// <param name="PublicKey">[in] peer's public key</param>
         public void GetSharedSecret(ref byte[] SharedSecret, byte[] AgreementKey, byte[] PublicKey)
         {
-            dummy = new byte[] { };
+            byte[] dummy = new byte[] { };
             Core( SharedSecret, dummy, AgreementKey, PublicKey);
         }
 
