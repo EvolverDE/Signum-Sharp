@@ -3,3 +3,15 @@ C:\Current_Develpements\Signum_Sharp\obj\Debug\net6.0\Signum_Sharp.GeneratedMSBu
 C:\Current_Develpements\Signum_Sharp\obj\Debug\net6.0\Signum_Sharp.AssemblyInfoInputs.cache
 C:\Current_Develpements\Signum_Sharp\obj\Debug\net6.0\Signum_Sharp.AssemblyInfo.cs
 C:\Current_Develpements\Signum_Sharp\obj\Debug\net6.0\Signum_Sharp.csproj.CoreCompileInputs.cache
+C:\Current_Develpements\Signum_Sharp\Signum-Sharp\bin\Debug\net6.0\Signum_Sharp.deps.json
+C:\Current_Develpements\Signum_Sharp\Signum-Sharp\bin\Debug\net6.0\Signum_Sharp.dll
+C:\Current_Develpements\Signum_Sharp\Signum-Sharp\bin\Debug\net6.0\Signum_Sharp.pdb
+C:\Current_Develpements\Signum_Sharp\Signum-Sharp\obj\Debug\net6.0\Signum_Sharp.csproj.AssemblyReference.cache
+C:\Current_Develpements\Signum_Sharp\Signum-Sharp\obj\Debug\net6.0\Signum_Sharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Current_Develpements\Signum_Sharp\Signum-Sharp\obj\Debug\net6.0\Signum_Sharp.AssemblyInfoInputs.cache
+C:\Current_Develpements\Signum_Sharp\Signum-Sharp\obj\Debug\net6.0\Signum_Sharp.AssemblyInfo.cs
+C:\Current_Develpements\Signum_Sharp\Signum-Sharp\obj\Debug\net6.0\Signum_Sharp.csproj.CoreCompileInputs.cache
+C:\Current_Develpements\Signum_Sharp\Signum-Sharp\obj\Debug\net6.0\Signum_Sharp.dll
+C:\Current_Develpements\Signum_Sharp\Signum-Sharp\obj\Debug\net6.0\refint\Signum_Sharp.dll
+C:\Current_Develpements\Signum_Sharp\Signum-Sharp\obj\Debug\net6.0\Signum_Sharp.pdb
+C:\Current_Develpements\Signum_Sharp\Signum-Sharp\obj\Debug\net6.0\ref\Signum_Sharp.dll
